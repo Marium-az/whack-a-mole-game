@@ -21,15 +21,19 @@ startBtn.addEventListener("click", () => {
   gameInterval = setInterval(showMole, 1500)
 
   timeInterval = setInterval(() => {
-    timeLeft--
-    timeDisplay.textContent = "Time: " + timeLeft
+  timeLeft--
+  timeDisplay.textContent = "Time: " + timeLeft
+  if (timeLeft <= 0) {
+    clearInterval(gameInterval)
+    clearInterval(timeInterval)
 
-    if (timeLeft <= 0) {
-        clearInterval(gameInterval)
-        clearInterval(timeInterval)
-        alert("Game over! Final score: " + score)
+    if (score > 20) {
+      alert("You win! Final score: " + score)
+    } else {
+      alert("You lose! Final score: " + score)
     }
-  }, 1000)
+  }
+}, 1000)
 });
 
 function randomHole() {
@@ -43,7 +47,7 @@ function showMole() {
   
   setTimeout(() => {
     hole.classList.remove("active")
-  }, 850)
+  }, 750)
 }
 
 
@@ -56,3 +60,4 @@ holes.forEach(hole => {
         }
     })
 })
+
