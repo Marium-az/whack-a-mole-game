@@ -47,7 +47,7 @@ function showMole() {
   
   setTimeout(() => {
     hole.classList.remove("active")
-  }, 750)
+  }, 800)
 }
 
 
@@ -60,4 +60,5 @@ holes.forEach(hole => {
         }
     })
 })
+
 
