@@ -3,7 +3,7 @@ let score = 0
 let scoreDisplay = document.getElementById("score")
 let startBtn = document.getElementById("start-btn")
 let gameInterval
-let timeLeft = 30
+let timeLeft = 35
 let timeDisplay = document.getElementById("time")
 let timeInterval
 
@@ -15,7 +15,7 @@ startBtn.addEventListener("click", () => {
   score = 0
   scoreDisplay.textContent = "Score: " + score
 
-  timeLeft = 30
+  timeLeft = 35
   timeDisplay.textContent = "Time: " + timeLeft
 
   gameInterval = setInterval(showMole, 1500)
@@ -60,6 +60,7 @@ holes.forEach(hole => {
         }
     })
 })
+
 
 
 
