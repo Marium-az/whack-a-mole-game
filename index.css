@@ -1,0 +1,91 @@
+body{
+    background-color: #f7d1d8;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: darkred;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+    font-size: 25px;
+    min-height: 100vh;
+    margin: 0;
+}
+
+h1{
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px 0;
+}
+
+body::before {
+    content: "✨";
+    position: absolute;
+    top: 20px;
+    right: 20px; /* top-right sparkle */
+    font-size: 2rem;
+    animation: sparkle 2s infinite alternate;
+    opacity: 0.8;
+}
+
+body::after {
+    content: "✨";
+    position: absolute;
+    bottom: 20px;
+    left: 20px; /* bottom-left sparkle */
+    font-size: 2rem;
+    animation: sparkle 2.5s infinite alternate;
+    opacity: 0.8;
+}
+
+@keyframes sparkle {
+    from { opacity: 0.3; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1.2); }
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px); 
+    grid-template-rows: repeat(3, 100px); 
+    gap: 10px; 
+    height: 320px; 
+    width: 90vw;
+    max-width: 320px; 
+}
+
+.mole {
+    display: none;
+    width: 70px;
+    height: 90px;
+}
+
+.hole.active .mole {
+    display: block;
+}
+
+.hole {
+    width: 100px;
+    height: 100px;
+    background: #f7eeed;
+    box-shadow: 6px 7px 0px #e3bcc3;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+#start-btn{
+    background-color: #f4bbc9;
+    border: none;
+    border-radius: 5px;
+    color: darkred;
+    padding: 15px 18px 18px 15px;
+    font-size: 25px;
+}
+
+.game-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
